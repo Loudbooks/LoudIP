@@ -20,6 +20,7 @@
                 ip = data.ip;
 
                 loadingPromise = Promise.resolve();
+                document.title = ip;
 
                 amountNeededHorizontal = window.innerWidth / (ip.length * (fontSize * 0.2));
                 amountNeededVertical = window.innerHeight / fontSize;
