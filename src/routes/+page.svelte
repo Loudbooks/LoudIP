@@ -156,7 +156,7 @@
     }
     .text-container {
         display: flex;
-        flex-wrap: wrap;
+        flex-wrap: nowrap;
         justify-content: center;
         align-items: center;
 
@@ -183,6 +183,7 @@
         font-weight: 1000;
         padding: 0;
         display: inline-block;
+        white-space: nowrap;
         opacity: 0;
         transform: translateY(100%);
         transition: opacity 0.5s ease, transform 0.5s ease, margin 0.5s ease;
