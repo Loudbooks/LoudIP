@@ -68,14 +68,13 @@
         navigator.clipboard.writeText(ip);
 
         copied.style.opacity = "1";
-        copied.style.transform = "translateY(0) scale(1)";
+        copied.style.transform = "scale(1)";
 
         clearTimeout(currentTimeout);
 
         currentTimeout = setTimeout(() => {
             copied.style.opacity = "0";
-            copied.style.transform = "translateY(-100%)";
-            copied.style.transform = "translateY(0) scale(0.8)";
+            copied.style.transform = "scale(0.8)";
         }, 2000);
 
         let children = background.children;
@@ -218,7 +217,8 @@
         bottom: 100px;
 
         opacity: 0;
-        transform: translateY(100%) scale(0.8);
+
+        transform: scale(0.8);
 
         transition: opacity 0.3s ease, transform 0.5s ease;
     }
