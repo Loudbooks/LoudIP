@@ -17,27 +17,29 @@
 
     let loadingPromise: Promise<void> = new Promise(() => {});
 
-    onMount(() => {
-        let locationPromise = fetch('http://ip-api.com/json/')
-            .then(response => response.json())
-            .then(data => {
-                console.log(data);
-                location = `${data.city}, ${data.regionName}`;
-                isp = data.isp;
-            });
-
+    onMount(async () => {
         let ipPromise = fetch('https://api64.ipify.org?format=json')
             .then(response => response.json())
-            .then(data => {
+            .then(async data => {
                 ip = data.ip;
+
+                let ispPromise = fetch(`https://ip.loudbook.dev/api/${ip}`)
+                    .then(response => response.json())
+                    .then(data => {
+                        console.log(data);
+                        location = `${data.city}, ${data.regionName}`;
+                        isp = data.isp;
+                    });
 
                 document.title = ip;
 
                 amountNeededHorizontal = window.innerWidth / (ip.length * (fontSize * 0.2));
                 amountNeededVertical = window.innerHeight / fontSize;
+
+                await ispPromise;
             });
 
-        Promise.all([locationPromise, ipPromise]).then(() => {
+        Promise.all([ipPromise]).then(() => {
             loadingPromise = Promise.resolve();
         });
     });
