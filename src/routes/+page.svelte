@@ -57,6 +57,7 @@
                 setTimeout(() => {
                     char.style.opacity = "1";
                     char.style.transform = "translateY(0)";
+                    char.style.margin = "-1px"
                 }, (i + 1) * 30);
             }
         }
@@ -180,12 +181,13 @@
     h1 {
         font-size: 15vw;
         font-weight: 1000;
-        margin: -1px;
         padding: 0;
         display: inline-block;
         opacity: 0;
         transform: translateY(100%);
-        transition: opacity 0.5s ease, transform 0.5s ease;
+        transition: opacity 0.5s ease, transform 0.5s ease, margin 0.5s ease;
+        
+        margin: 10px;
     }
     #background {
         position: fixed;
