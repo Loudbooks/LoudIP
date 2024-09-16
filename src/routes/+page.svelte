@@ -14,7 +14,7 @@
     let loadingPromise: Promise<void> = new Promise(() => {});
 
     onMount(() => {
-        fetch('https://api.ipify.org?format=json')
+        fetch('https://api64.ipify.org?format=json')
             .then(response => response.json())
             .then(data => {
                 ip = data.ip;
