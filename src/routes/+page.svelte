@@ -283,9 +283,19 @@
         margin-right: 40px;
     }
 
+    .info-icon {
+        height: 2.2vw;
+        width: 2.2vw;
+        margin: 0;
+        padding: 0;
+    }
+
     .copied-icon {
-        height: min(2.2vw, 50px);
-        width: min(2.2vw, 50px);
+        height: 2.2vw;
+        width: 2.2vw;
+        min-height: 30px;
+        min-width: 30px;
+
         margin: 0;
         padding: 0;
         position: absolute;
@@ -294,12 +304,5 @@
         transform: scale(0.8);
 
         transition: opacity 0.3s ease, transform 0.5s ease;
-    }
-
-    .info-icon {
-        height: 2.2vw;
-        width: 2.2vw;
-        margin: 0;
-        padding: 0;
     }
 </style>
